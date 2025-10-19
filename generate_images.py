@@ -30,7 +30,7 @@ SESSION.trust_env = False
 # Create output directory if it doesn't exist
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-def generate_image(prompt_text, output_filename):
+def generate_image(prompt_text, output_filename, api_key: Optional[str] = None):
     """
     Generate an image using OpenRouter API with Gemini 2.5 Flash Image
 
@@ -42,14 +42,15 @@ def generate_image(prompt_text, output_filename):
         list[str]: List of saved image file names (within OUTPUT_DIR). Empty list on failure.
                    Note: The function is truthy on success for backward compatibility with CLI usage.
     """
-    if not OPENROUTER_API_KEY:
-        print("Error: OPENROUTER_API_KEY not found in .env file")
-        return False
+    key = api_key or OPENROUTER_API_KEY
+    if not key:
+        print("Error: OPENROUTER_API_KEY not found and no override provided")
+        return []
     
     url = "https://openrouter.ai/api/v1/chat/completions"
     
     headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Authorization": f"Bearer {key}",
         "Content-Type": "application/json",
         "Accept": "application/json",
         "HTTP-Referer": "https://github.com/yourusername/blood-assassin",  # Optional

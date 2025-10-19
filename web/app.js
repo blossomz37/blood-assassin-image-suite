@@ -6,6 +6,7 @@
   const promptFileInput = $('#prompt_file');
   const promptTextarea = $('#prompt');
   const nameInput = $('#name');
+  const apiKeyInput = $('#apiKey');
 
   // If user selects a file, try to fill textarea with its contents (for visibility)
   promptFileInput.addEventListener('change', async (e) => {
@@ -36,11 +37,13 @@
         if (nameInput.value.trim()) fd.set('name', nameInput.value.trim());
         if (promptTextarea.value.trim()) fd.set('prompt', promptTextarea.value.trim());
         fd.set('prompt_file', promptFileInput.files[0]);
+        if (apiKeyInput.value.trim()) fd.set('apiKey', apiKeyInput.value.trim());
         resp = await fetch('/api/generate', { method: 'POST', body: fd });
       } else {
         const body = {
           name: nameInput.value.trim() || undefined,
           prompt: promptTextarea.value.trim(),
+          apiKey: apiKeyInput.value.trim() || undefined,
         };
         resp = await fetch('/api/generate', {
           method: 'POST',

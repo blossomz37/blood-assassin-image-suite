@@ -55,10 +55,13 @@ def api_generate():
     prompt_text: Optional[str] = None
     base_name: str = "image"
 
+    api_key_override: Optional[str] = None
     if request.content_type and request.content_type.startswith("application/json"):
         data = request.get_json(silent=True) or {}
         prompt_text = (data.get("prompt") or "").strip() or None
         base_name = (data.get("name") or base_name).strip() or base_name
+        # Optional temporary API key (do not store server-side)
+        api_key_override = (data.get("apiKey") or "").strip() or None
     else:
         # multipart form
         if "prompt_file" in request.files:
@@ -81,11 +84,12 @@ def api_generate():
         form_name = (request.form.get("name") or "").strip()
         if form_name:
             base_name = form_name
+        api_key_override = (request.form.get("apiKey") or "").strip() or None
 
     if not prompt_text:
         return jsonify({"error": "No prompt provided. Provide JSON {prompt} or upload a .txt file."}), 400
 
-    images: List[str] = generate_image(prompt_text, base_name) or []
+    images: List[str] = generate_image(prompt_text, base_name, api_key=api_key_override) or []
 
     if not images:
         return jsonify({"error": "No images returned from model."}), 502
@@ -110,7 +114,8 @@ def serve_prompts(filename: str):
 
 def main():
     port = int(os.environ.get("PORT", "5000"))
-    app.run(host="127.0.0.1", port=port, debug=True)
+    # Bind to 0.0.0.0 for Railway or container platforms
+    app.run(host=os.environ.get("HOST", "0.0.0.0"), port=port, debug=True)
 
 
 if __name__ == "__main__":

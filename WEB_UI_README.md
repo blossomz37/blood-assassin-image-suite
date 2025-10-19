@@ -31,6 +31,15 @@ python3 server.py
 - Optionally set an output base name (defaults to “image” or the file stem)
 - Click Generate, then preview and download your images
 
+Optional: Temporary API key input
+- The UI has a password field where you can paste a temporary `OPENROUTER_API_KEY` (prefix `sk-or-v1-`).
+- This key is sent only with your request and is NOT stored server-side.
+- If omitted, the server falls back to the `.env` key.
+
+Deploying to Railway
+- This server binds to `0.0.0.0` and respects the `PORT` env var automatically.
+- Set your `OPENROUTER_API_KEY` as a Railway environment variable.
+
 ## API
 - POST /api/generate
   - JSON: `{ "prompt": "text...", "name": "optional-base-name" }`
