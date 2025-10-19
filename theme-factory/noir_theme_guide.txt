@@ -1,0 +1,77 @@
+
+BLOOD ASSASSIN - MINIMALIST NOIR THEME GUIDE
+============================================
+
+COLOR PALETTE
+-------------
+Primary:   #0A0A0A (Near Black)
+Secondary: #F5F5F5 (Off White)
+Accent:    #C80000 (Deep Red - use sparingly)
+Support:   #808080 (Mid Grey)
+           #282828 (Dark Grey)
+
+TYPOGRAPHY
+----------
+Font Family: Helvetica Neue, Arial, sans-serif
+Title Size: 72pt (no bold)
+Heading: 36pt
+Body: 24pt
+Caption: 14-18pt
+
+DESIGN PRINCIPLES
+-----------------
+1. CONTRAST: Only high contrast combinations
+   - Black on white
+   - White on black
+   - Grey for secondary elements
+
+2. MINIMALISM: 
+   - Maximum 3 elements per slide
+   - Single focal point
+   - Extensive negative space
+
+3. TYPOGRAPHY AS DESIGN:
+   - Text is the primary visual element
+   - Size creates hierarchy
+   - No decorative fonts
+
+4. COLOR RESTRAINT:
+   - 95% black/white/grey
+   - Red accent for critical emphasis only
+   - No gradients or shadows
+
+5. LAYOUT:
+   - Center-aligned for impact
+   - Left-aligned for reading
+   - Asymmetric for tension
+
+6. IMAGERY:
+   - High contrast black & white only
+   - Silhouettes preferred
+   - Minimal detail
+
+MOOD & TONE
+-----------
+- Stark
+- Mysterious  
+- Elegant
+- Dangerous
+- Sophisticated
+
+WHAT TO AVOID
+-------------
+- Ornamental elements
+- Multiple fonts
+- Bright colors
+- Complex layouts
+- Photorealistic images
+- Gradients/shadows
+- Rounded corners
+- Decorative borders
+
+APPLICATION NOTES
+-----------------
+This noir theme strips away everything except essence.
+Every element must justify its presence.
+Space is as important as content.
+Less is always more.

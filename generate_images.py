@@ -33,13 +33,14 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 def generate_image(prompt_text, output_filename):
     """
     Generate an image using OpenRouter API with Gemini 2.5 Flash Image
-    
+
     Args:
         prompt_text: The text prompt for image generation
         output_filename: Name for the output file (without extension)
-    
+
     Returns:
-        bool: True if successful, False otherwise
+        list[str]: List of saved image file names (within OUTPUT_DIR). Empty list on failure.
+                   Note: The function is truthy on success for backward compatibility with CLI usage.
     """
     if not OPENROUTER_API_KEY:
         print("Error: OPENROUTER_API_KEY not found in .env file")
@@ -81,7 +82,7 @@ def generate_image(prompt_text, output_filename):
 
             # Preferred path: images field with base64 data URLs
             images = message.get('images', []) or []
-            saved_any = False
+            saved_filenames = []
             for idx, img in enumerate(images, start=1):
                 if isinstance(img, dict) and img.get('type') == 'image_url':
                     url = img.get('image_url', {}).get('url', '')
@@ -106,12 +107,12 @@ def generate_image(prompt_text, output_filename):
                         with open(output_path, 'wb') as f:
                             f.write(image_bytes)
                         print(f"✓ Successfully saved: {output_path}")
-                        saved_any = True
-                    except Exception as e:
+                        saved_filenames.append(output_path.name)
+                    except (ValueError, base64.binascii.Error, OSError) as e:
                         print(f"✗ Failed to decode/save image {idx}: {e}")
 
-            if saved_any:
-                return True
+            if saved_filenames:
+                return saved_filenames
 
             # Fallback: some responses may inline a single data URL in content
             content = message.get('content')
@@ -129,27 +130,27 @@ def generate_image(prompt_text, output_filename):
                     with open(output_path, 'wb') as f:
                         f.write(image_bytes)
                     print(f"✓ Successfully saved: {output_path}")
-                    return True
-                except Exception as e:
+                    return [output_path.name]
+                except (ValueError, base64.binascii.Error, OSError) as e:
                     print(f"✗ Failed to decode inline image: {e}")
-                    return False
+                    return []
 
             # If we got here, no images were returned
             preview = (message.get('content') or '')
             print(f"✗ No image data in response. Assistant said: {str(preview)[:120]}")
-            return False
+            return []
         else:
             print(f"✗ No image data in response: {result}")
-            return False
+            return []
             
     except requests.exceptions.RequestException as e:
         print(f"✗ Error generating image: {e}")
         if hasattr(e, 'response') and e.response is not None:
             print(f"  Response: {e.response.text}")
-        return False
+        return []
     except (ValueError, KeyError, base64.binascii.Error) as e:
         print(f"✗ Unexpected parse error: {e}")
-        return False
+        return []
 
 def main():
     """Main function to process all prompts"""

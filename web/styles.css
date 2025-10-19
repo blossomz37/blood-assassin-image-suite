@@ -1,0 +1,84 @@
+:root {
+  --bg: #0f0f12;
+  --card: #16161a;
+  --text: #e6e6eb;
+  --muted: #a0a0ab;
+  --accent: #8b5cf6;
+  --accent-2: #22d3ee;
+  --border: #2a2a31;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(60rem 60rem at 85% -10%, rgba(34,211,238,0.12), transparent),
+              radial-gradient(60rem 60rem at -10% 20%, rgba(139,92,246,0.15), transparent),
+              var(--bg);
+  color: var(--text);
+}
+
+header, footer {
+  text-align: center;
+  padding: 1.25rem 1rem;
+}
+header h1 { margin: 0 0 .25rem; font-size: 1.6rem; }
+header p { margin: 0; color: var(--muted); }
+footer { color: var(--muted); }
+
+main { max-width: 980px; margin: 0 auto; padding: 1rem; }
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+  margin-bottom: 1rem;
+}
+
+form .row { display: grid; gap: .5rem; margin-bottom: .9rem; }
+label { color: var(--muted); font-size: .95rem; }
+input[type="text"], textarea, input[type="file"] {
+  width: 100%;
+  padding: .7rem .8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+}
+textarea { resize: vertical; }
+
+.actions { display: flex; align-items: center; gap: 1rem; }
+button {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  border: none;
+  padding: .7rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+#status { color: var(--muted); }
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: .8rem;
+}
+.imgCard {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #121215;
+}
+.imgCard img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.imgActions {
+  display: flex;
+  gap: .75rem;
+  padding: .6rem .8rem;
+}
+.imgActions a { color: var(--accent-2); text-decoration: none; font-weight: 600; }
