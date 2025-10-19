@@ -1,0 +1,79 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- The Nightbringer - Abstract Horror -->
+  <defs>
+    <radialGradient id="voidGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </radialGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background void -->
+  <rect width="600" height="400" fill="url(#voidGrad)"/>
+  
+  <!-- Swirling void/portal effect -->
+  <g opacity="0.3">
+    <ellipse cx="300" cy="200" rx="200" ry="150" fill="none" stroke="#333333" stroke-width="2"/>
+    <ellipse cx="300" cy="200" rx="160" ry="120" fill="none" stroke="#444444" stroke-width="2"/>
+    <ellipse cx="300" cy="200" rx="120" ry="90" fill="none" stroke="#555555" stroke-width="2"/>
+    <ellipse cx="300" cy="200" rx="80" ry="60" fill="none" stroke="#666666" stroke-width="2"/>
+  </g>
+  
+  <!-- Central void/eye -->
+  <ellipse cx="300" cy="200" rx="60" ry="80" fill="#000000" stroke="#666666" stroke-width="3"/>
+  
+  <!-- Glowing cracks emanating from center -->
+  <g filter="url(#glow)">
+    <path d="M 300 200 L 250 100" stroke="#4a4a4a" stroke-width="3" opacity="0.7"/>
+    <path d="M 300 200 L 350 100" stroke="#4a4a4a" stroke-width="3" opacity="0.7"/>
+    <path d="M 300 200 L 200 200" stroke="#4a4a4a" stroke-width="3" opacity="0.7"/>
+    <path d="M 300 200 L 400 200" stroke="#4a4a4a" stroke-width="3" opacity="0.7"/>
+    <path d="M 300 200 L 250 300" stroke="#4a4a4a" stroke-width="3" opacity="0.7"/>
+    <path d="M 300 200 L 350 300" stroke="#4a4a4a" stroke-width="3" opacity="0.7"/>
+  </g>
+  
+  <!-- Shadowy tendrils -->
+  <g opacity="0.5">
+    <path d="M 100 50 Q 150 100 180 150" fill="none" stroke="#2a2a2a" stroke-width="8"/>
+    <path d="M 500 50 Q 450 100 420 150" fill="none" stroke="#2a2a2a" stroke-width="8"/>
+    <path d="M 100 350 Q 150 300 180 250" fill="none" stroke="#2a2a2a" stroke-width="8"/>
+    <path d="M 500 350 Q 450 300 420 250" fill="none" stroke="#2a2a2a" stroke-width="8"/>
+  </g>
+  
+  <!-- Corrupted particles/fragments -->
+  <circle cx="150" cy="120" r="4" fill="#3a3a3a" opacity="0.8"/>
+  <circle cx="450" cy="120" r="3" fill="#3a3a3a" opacity="0.8"/>
+  <circle cx="120" cy="280" r="5" fill="#3a3a3a" opacity="0.8"/>
+  <circle cx="480" cy="280" r="4" fill="#3a3a3a" opacity="0.8"/>
+  <circle cx="200" cy="80" r="3" fill="#3a3a3a" opacity="0.8"/>
+  <circle cx="400" cy="80" r="4" fill="#3a3a3a" opacity="0.8"/>
+  
+  <!-- Ominous symbols around the void -->
+  <g opacity="0.4" fill="none" stroke="#555555" stroke-width="2">
+    <!-- Strange runes/marks -->
+    <path d="M 300 100 L 300 80 M 295 90 L 305 90"/>
+    <path d="M 400 200 L 420 200 M 410 195 L 410 205"/>
+    <path d="M 300 300 L 300 320 M 295 310 L 305 310"/>
+    <path d="M 200 200 L 180 200 M 190 195 L 190 205"/>
+  </g>
+  
+  <!-- Title text -->
+  <text x="300" y="380" font-family="serif" font-size="32" font-weight="bold" 
+        fill="#3a3a3a" text-anchor="middle" letter-spacing="4">
+    THE NIGHTBRINGER
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="300" y="395" font-family="serif" font-size="14" font-style="italic" 
+        fill="#2a2a2a" text-anchor="middle" letter-spacing="2">
+    Force of Stasis and Ruin
+  </text>
+</svg>

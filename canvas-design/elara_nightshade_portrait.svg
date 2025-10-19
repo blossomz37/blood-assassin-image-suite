@@ -1,0 +1,112 @@
+<svg width="800" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark Gothic Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowRed" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8B0000;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#bgGradient)"/>
+  
+  <!-- Subtle glow effects -->
+  <circle cx="400" cy="150" r="200" fill="url(#glowRed)" opacity="0.3"/>
+  
+  <!-- Decorative corner elements -->
+  <path d="M 20 20 L 80 20 L 80 30 L 30 30 L 30 80 L 20 80 Z" fill="#8B0000" opacity="0.5"/>
+  <path d="M 780 20 L 720 20 L 720 30 L 770 30 L 770 80 L 780 80 Z" fill="#8B0000" opacity="0.5"/>
+  <path d="M 20 980 L 80 980 L 80 970 L 30 970 L 30 920 L 20 920 Z" fill="#8B0000" opacity="0.5"/>
+  <path d="M 780 980 L 720 980 L 720 970 L 770 970 L 770 920 L 780 920 Z" fill="#8B0000" opacity="0.5"/>
+  
+  <!-- Title -->
+  <text x="400" y="120" font-family="serif" font-size="56" font-weight="bold" fill="#8B0000" text-anchor="middle">
+    ELARA NIGHTSHADE
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="160" font-family="serif" font-size="22" font-style="italic" fill="#cccccc" text-anchor="middle">
+    The Chosen One • Vampire Hunter • Prophecy-Bearer
+  </text>
+  
+  <!-- Decorative line -->
+  <line x1="100" y1="190" x2="700" y2="190" stroke="#8B0000" stroke-width="3"/>
+  
+  <!-- Character silhouette/icon -->
+  <g transform="translate(400, 280)">
+    <!-- Stylized figure holding dagger -->
+    <ellipse cx="0" cy="-60" rx="40" ry="50" fill="#2a2a2a" stroke="#8B0000" stroke-width="2"/>
+    <!-- Body -->
+    <path d="M -30 -10 L -40 40 L -30 100 L 30 100 L 40 40 L 30 -10 Z" fill="#2a2a2a" stroke="#8B0000" stroke-width="2"/>
+    <!-- Arms with dagger -->
+    <path d="M -30 0 L -60 30 L -70 50" stroke="#8B0000" stroke-width="3" fill="none"/>
+    <path d="M 30 0 L 60 30 L 80 40" stroke="#8B0000" stroke-width="3" fill="none"/>
+    <!-- Dagger -->
+    <line x1="80" y1="40" x2="95" y2="55" stroke="#cccccc" stroke-width="4"/>
+    <polygon points="95,55 100,60 97,63 92,58" fill="#cccccc"/>
+  </g>
+  
+  <!-- Info Sections -->
+  <!-- Physical Presence -->
+  <text x="100" y="450" font-family="sans-serif" font-size="24" font-weight="bold" fill="#8B0000">
+    PHYSICAL PRESENCE
+  </text>
+  <text x="120" y="485" font-family="sans-serif" font-size="16" fill="#aaaaaa">
+    Age: 24 • Build: Lean, athletic, agile
+  </text>
+  <text x="120" y="510" font-family="sans-serif" font-size="16" fill="#aaaaaa">
+    Eyes: Piercing gray with penetrating focus
+  </text>
+  <text x="120" y="535" font-family="sans-serif" font-size="16" fill="#aaaaaa">
+    Hair: Dark brown, shoulder-length, braided
+  </text>
+  <text x="120" y="560" font-family="sans-serif" font-size="16" fill="#aaaaaa">
+    Mark: Crescent moon birthmark on collarbone
+  </text>
+  
+  <!-- Crescent moon symbol -->
+  <path d="M 680 480 Q 700 510 680 540 Q 710 520 710 500 Q 710 480 680 480" fill="none" stroke="#8B0000" stroke-width="2"/>
+  
+  <!-- Core Traits -->
+  <text x="100" y="620" font-family="sans-serif" font-size="24" font-weight="bold" fill="#8B0000">
+    CORE TRAITS
+  </text>
+  <text x="120" y="655" font-family="sans-serif" font-size="16" fill="#aaaaaa">
+    Determined • Guarded • Stubborn • Introspective • Fierce
+  </text>
+  <text x="120" y="690" font-family="sans-serif" font-size="15" font-weight="bold" fill="#999999">
+    MBTI: <tspan fill="#aaaaaa" font-weight="normal">ISTP (The Virtuoso)</tspan>
+  </text>
+  <text x="120" y="715" font-family="sans-serif" font-size="15" font-weight="bold" fill="#999999">
+    Fatal Flaw: <tspan fill="#aaaaaa" font-weight="normal">Fear of Vulnerability</tspan>
+  </text>
+  
+  <!-- Quote Box -->
+  <rect x="80" y="760" width="640" height="100" fill="#2a0000" rx="10"/>
+  <text x="400" y="795" font-family="serif" font-size="18" font-style="italic" fill="#cccccc" text-anchor="middle">
+    "Pretending works fine when the people who think
+  </text>
+  <text x="400" y="825" font-family="serif" font-size="18" font-style="italic" fill="#cccccc" text-anchor="middle">
+    they're smarter keep underestimating me."
+  </text>
+  
+  <!-- Combat Expertise -->
+  <text x="100" y="905" font-family="sans-serif" font-size="24" font-weight="bold" fill="#8B0000">
+    COMBAT EXPERTISE
+  </text>
+  <text x="120" y="935" font-family="sans-serif" font-size="16" fill="#aaaaaa">
+    Weapons: Daggers • Crossbows • Hand-to-hand
+  </text>
+  <text x="120" y="960" font-family="sans-serif" font-size="16" fill="#aaaaaa">
+    Style: Stealth-focused tactical precision
+  </text>
+  
+  <!-- Footer -->
+  <line x1="100" y1="985" x2="700" y2="985" stroke="#8B0000" stroke-width="2"/>
+</svg>

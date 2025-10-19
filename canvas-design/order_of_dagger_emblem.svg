@@ -1,0 +1,67 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Order of the Dagger Emblem -->
+  <defs>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cccccc;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#999999;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="400" height="400" fill="#1a1a1a"/>
+  
+  <!-- Shield outline -->
+  <path d="M 200 40 L 320 100 L 320 240 Q 320 320 200 360 Q 80 320 80 240 L 80 100 Z" 
+        fill="#2a2a2a" stroke="#666666" stroke-width="4"/>
+  
+  <!-- Inner shield detail -->
+  <path d="M 200 60 L 300 110 L 300 235 Q 300 305 200 340 Q 100 305 100 235 L 100 110 Z" 
+        fill="none" stroke="#444444" stroke-width="2"/>
+  
+  <!-- Central dagger -->
+  <g transform="translate(200, 140)">
+    <!-- Blade -->
+    <polygon points="0,-60 -8,40 8,40" fill="url(#silverGrad)" stroke="#999999" stroke-width="1"/>
+    <!-- Blood groove -->
+    <line x1="0" y1="-50" x2="0" y2="35" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Cross-guard -->
+    <rect x="-25" y="40" width="50" height="8" fill="url(#silverGrad)" stroke="#999999" stroke-width="1"/>
+    
+    <!-- Grip -->
+    <rect x="-6" y="48" width="12" height="30" fill="#333333" stroke="#666666" stroke-width="1"/>
+    <!-- Grip wrapping -->
+    <line x1="-6" y1="55" x2="6" y2="55" stroke="#555555" stroke-width="1"/>
+    <line x1="-6" y1="63" x2="6" y2="63" stroke="#555555" stroke-width="1"/>
+    <line x1="-6" y1="71" x2="6" y2="71" stroke="#555555" stroke-width="1"/>
+    
+    <!-- Pommel -->
+    <circle cx="0" cy="82" r="8" fill="url(#silverGrad)" stroke="#999999" stroke-width="1"/>
+  </g>
+  
+  <!-- Thorns around shield -->
+  <!-- Top thorns -->
+  <path d="M 180 80 L 170 60 L 175 80" fill="#666666"/>
+  <path d="M 200 70 L 200 50 L 202 70" fill="#666666"/>
+  <path d="M 220 80 L 230 60 L 225 80" fill="#666666"/>
+  
+  <!-- Side thorns -->
+  <path d="M 90 150 L 70 145 L 90 155" fill="#666666"/>
+  <path d="M 90 200 L 70 200 L 90 205" fill="#666666"/>
+  <path d="M 310 150 L 330 145 L 310 155" fill="#666666"/>
+  <path d="M 310 200 L 330 200 L 310 205" fill="#666666"/>
+  
+  <!-- Text banner at bottom -->
+  <path d="M 100 320 L 300 320 L 290 340 L 110 340 Z" fill="#333333" stroke="#666666" stroke-width="2"/>
+  
+  <text x="200" y="335" font-family="serif" font-size="16" font-weight="bold" fill="#cccccc" text-anchor="middle">
+    ORDER OF THE DAGGER
+  </text>
+  
+  <!-- Corner flourishes -->
+  <circle cx="30" cy="30" r="3" fill="#666666"/>
+  <circle cx="370" cy="30" r="3" fill="#666666"/>
+  <circle cx="30" cy="370" r="3" fill="#666666"/>
+  <circle cx="370" cy="370" r="3" fill="#666666"/>
+</svg>

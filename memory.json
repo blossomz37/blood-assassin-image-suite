@@ -1,0 +1,110 @@
+{
+  "project": "Blood Assassin - Four Phase Image Integration",
+  "created": "2025-10-19",
+  "plan_reference": "FOUR-PHASE-INTEGRATION-PLAN.md",
+  "phases": {
+    "phase_1": {
+      "name": "Character Dossier (DOCX)",
+      "status": "completed",
+      "output_file": "Blood_Assassin_Character_Dossier.docx",
+      "started": "2025-10-19 12:46 PM",
+      "completed": "2025-10-19 8:20 PM",
+      "problems": [
+        "Images failed to embed - generated-images directory not found in expected path",
+        "Claude's container cannot directly access user's local filesystem (/Users/carlo/...) for binary files",
+        "Generated images were WebP format despite .png extension - python-docx doesn't support WebP"
+      ],
+      "solutions": [
+        "Created Python script (add_images_to_dossier.py) that user runs locally with direct filesystem access - SUCCESSFUL",
+        "Alternative workflow: User uploads files to chat → Claude processes in container → User downloads result",
+        "Image format detection using 'file' command, then PIL conversion from WebP to PNG before embedding"
+      ],
+      "notes": [
+        "First attempt completed at 12:48 PM but without images",
+        "Created standalone Python script for local execution - user confirmed it worked with all 12 images",
+        "Demonstrated container-based workflow with single image (Queen Lysandria portrait) at 8:20 PM",
+        "Two successful approaches: (1) Local script with filesystem access, (2) Upload/process/download workflow"
+      ]
+    },
+    "phase_2": {
+      "name": "Story Pitch Deck (PPTX)",
+      "status": "completed",
+      "output_file": "Blood_Assassin_Pitch_Deck.pptx",
+      "started": "2025-10-19 8:30 PM",
+      "completed": "2025-10-19 8:45 PM",
+      "problems": [
+        "Images were in WebP format despite .png extension - python-pptx doesn't support WebP"
+      ],
+      "solutions": [
+        "Converted images from WebP to PNG using PIL/Pillow before embedding in presentation"
+      ],
+      "notes": [
+        "Created 8-slide professional pitch deck with character portraits",
+        "Includes title, world overview, characters, stakes, themes, market positioning, series potential, and call to action",
+        "Successfully embedded Elara and Lysandria portraits on multiple slides"
+      ]
+    },
+    "phase_3": {
+      "name": "Visual Story Bible (PDF)",
+      "status": "not_started",
+      "output_file": "Blood_Assassin_Story_Bible.pdf",
+      "started": null,
+      "completed": null,
+      "problems": [],
+      "solutions": [],
+      "notes": []
+    },
+    "phase_4": {
+      "name": "Interactive Character Gallery (HTML)",
+      "status": "not_started",
+      "output_file": "blood_assassin_gallery.html",
+      "started": null,
+      "completed": null,
+      "problems": [],
+      "solutions": [],
+      "notes": []
+    }
+  },
+  "generated_images": [
+    "generated-images/01_elara_nightshade_portrait.png",
+    "generated-images/02_queen_lysandria_portrait.png",
+    "generated-images/03_seraphiel_portrait.png",
+    "generated-images/04_prophecy_chamber.png",
+    "generated-images/05_crimson_court_throne_room.png",
+    "generated-images/06_elara_vs_lysandria.png",
+    "generated-images/07_nightbringer_manifestation.png",
+    "generated-images/08_rebel_encampment.png",
+    "generated-images/09_blood_moon_fortress.png",
+    "generated-images/10_twilight_accord_signing.png",
+    "generated-images/11_elara_midnight_hunt.png",
+    "generated-images/12_seraphiel_celestial_powers.png"
+  ],
+  "source_documents": [
+    "Character Info - Blood Assassin.txt"
+  ],
+  "technical_notes": {
+    "claude_filesystem_limitations": {
+      "can_list": "Filesystem tools can list directories on user's local filesystem",
+      "cannot_read_binary": "Cannot read/copy large binary files (docx, images) from user's filesystem to container",
+      "solution": "User uploads files to chat (/mnt/user-data/uploads/) OR user runs scripts locally"
+    },
+    "docx_workflow": {
+      "library": "python-docx",
+      "install_command": "pip install python-docx --break-system-packages",
+      "image_format_issue": "Generated images were WebP despite .png extension",
+      "image_conversion": "Use PIL/Pillow to convert WebP to PNG before embedding",
+      "check_format": "file /path/to/image.png",
+      "paths": {
+        "uploads": "/mnt/user-data/uploads/",
+        "outputs": "/mnt/user-data/outputs/"
+      }
+    },
+    "working_scripts": [
+      "add_images_to_dossier.py - Local execution with all 12 images",
+      "add_one_image_upload.py - Container execution with uploaded files"
+    ],
+    "reference_document": "step_by_step_docx_workflow.md created for future reference"
+  },
+  "overall_status": "phase_2_complete_phase_3_ready",
+  "last_updated": "2025-10-19 8:45 PM"
+}

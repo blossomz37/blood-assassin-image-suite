@@ -1,0 +1,62 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# macOS metadata
+._*
+.Spotlight-V100
+.Trashes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# IDEs
+.idea/
+*.iml
+
+# Coverage / testing
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache/
+.pytest_cache/
+
+# Type checkers
+.mypy_cache/
+.pytype/
+
+# Project outputs
+/generated-images/
+/Blood_Assassin_Character_Dossier_backup.docx
+
+# OS files
+Thumbs.db
+Desktop.ini
+.env
