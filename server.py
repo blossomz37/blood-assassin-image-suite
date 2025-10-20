@@ -43,6 +43,16 @@ def index():
     return app.send_static_file("index.html")
 
 
+@app.route("/experiments")
+@app.route("/experiments/")
+def experiments_home():
+    # Serve the experiments index page
+    exp_index = WEB_DIR / "experiments" / "index.html"
+    if not exp_index.exists():
+        return "Experiments page not found.", 404
+    return send_from_directory(str((WEB_DIR / "experiments").resolve()), "index.html")
+
+
 @app.route("/api/generate", methods=["POST"])
 def api_generate():
     """
