@@ -1,3 +1,9 @@
+https://xierykaufosmdkcxzfex.supabase.co/storage/v1/object/public/image-gen/bloodbound-book-cover.png
+
+https://xierykaufosmdkcxzfex.supabase.co/storage/v1/object/public/image-gen/bloodbound-character-poster.png
+
+https://xierykaufosmdkcxzfex.supabase.co/storage/v1/object/public/image-gen/bloodbound-social-media.png
+
 https://xierykaufosmdkcxzfex.supabase.co/storage/v1/object/public/image-gen/01_elara_nightshade_portrait.png
 
 https://xierykaufosmdkcxzfex.supabase.co/storage/v1/object/public/image-gen/02_queen_lysandria_portrait.png

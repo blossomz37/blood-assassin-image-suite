@@ -50,7 +50,7 @@ textarea { resize: vertical; }
 
 .actions { display: flex; align-items: center; gap: 1rem; }
 button {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: #483d8b; /* Twilight Purple */
   color: white;
   border: none;
   padding: .7rem 1rem;
@@ -58,6 +58,8 @@ button {
   cursor: pointer;
   font-weight: 600;
 }
+button:hover { background: #3f377d; }
+button:disabled { opacity: .7; cursor: not-allowed; }
 #status { color: var(--muted); }
 
 .results {
