@@ -46,12 +46,6 @@ def api_generate():
       - name: base output filename without extension (optional)
     Returns: { images: ["filename.png", ...] }
     """
-    # Check auth quickly to fail fast with meaningful error
-    if not OPENROUTER_API_KEY or not str(OPENROUTER_API_KEY).startswith("sk-or-v1-"):
-        return jsonify({
-            "error": "Missing or invalid OPENROUTER_API_KEY. Check your .env and restart server."
-        }), 400
-
     prompt_text: Optional[str] = None
     base_name: str = "image"
 
@@ -85,6 +79,14 @@ def api_generate():
         if form_name:
             base_name = form_name
         api_key_override = (request.form.get("apiKey") or "").strip() or None
+
+    # Auth check: allow either env var or a provided temporary key from the request
+    has_env_key = bool(OPENROUTER_API_KEY and str(OPENROUTER_API_KEY).startswith("sk-or-v1-"))
+    has_temp_key = bool(api_key_override and str(api_key_override).startswith("sk-or-v1-"))
+    if not (has_env_key or has_temp_key):
+        return jsonify({
+            "error": "Missing or invalid API key. Provide OPENROUTER_API_KEY server env var or include a temporary key in the request."
+        }), 400
 
     if not prompt_text:
         return jsonify({"error": "No prompt provided. Provide JSON {prompt} or upload a .txt file."}), 400
