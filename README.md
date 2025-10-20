@@ -106,6 +106,23 @@ python3 create_pitch_deck.py
 Outputs:
 - `Blood_Assassin_Pitch_Deck.pptx`
 
+## Deploying to Railway
+
+This project is ready for Railway:
+- A `Procfile` is included: `web: python server.py`
+- The server binds to `0.0.0.0` and respects `PORT` env var
+
+Steps:
+1) Create a new Railway project and connect the GitHub repo
+2) Set environment variables in Railway:
+  - `OPENROUTER_API_KEY=sk-or-v1-...` (or rely on the UI’s temporary key field)
+3) Deploy
+4) Open the generated URL (Railway provides the correct port via `PORT`)
+
+Notes:
+- If Railway marked it as a “service” only, ensure the `Procfile` is present and the Python runtime is detected (via `requirements.txt`).
+- You can also set `PYTHONUNBUFFERED=1` for clearer logs (optional).
+
 ## Essential Scripts and Associated Files
 
 - Image Generator: `generate_images.py`
