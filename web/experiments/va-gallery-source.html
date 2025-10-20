@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Original Visual Gallery — Experiment</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .frame-wrap { height: 85vh; border: 2px solid #483d8b; border-radius: 10px; overflow: hidden; background:#000; }
+      iframe { width: 100%; height: 100%; border: 0; }
+      .top-nav { display:flex; justify-content:center; gap:12px; padding: 10px 0 10px; }
+      .top-nav a { color:#d4af37; text-decoration:none; border:1px solid #483d8b; padding:8px 12px; border-radius:6px; }
+      .top-nav a:hover { background:#8b0000; border-color:#d4af37; }
+      .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Original Visual Gallery Variants</h1>
+      <nav class="top-nav">
+        <a href="/">Home</a>
+        <a href="/experiments/">All Experiments</a>
+      </nav>
+    </header>
+    <main style="max-width: 1200px; margin: 0 auto; padding: 1rem;">
+      <section class="grid">
+        <article class="card" style="border-left: 4px solid #8b0000;">
+          <h3>Visual Assets Package (main)</h3>
+          <p>Original HTML page used to build the web/gallery.html.</p>
+          <p><a class="cta" href="/experiments-src/visual-assets-package/bloodbound-visual-gallery.html" target="_blank">Open in new tab</a></p>
+        </article>
+        <article class="card" style="border-left: 4px solid #d4af37;">
+          <h3>Visual Assets Package (alt)</h3>
+          <p>Alternate version retained for reference.</p>
+          <p><a class="cta" href="/experiments-src/visual-assets-package-alt/bloodbound-visual-gallery.html" target="_blank">Open in new tab</a></p>
+        </article>
+      </section>
+      <div class="frame-wrap" style="margin-top:1rem;">
+        <iframe src="/experiments-src/visual-assets-package/bloodbound-visual-gallery.html" title="Original VA Gallery"></iframe>
+      </div>
+    </main>
+  </body>
+</html>

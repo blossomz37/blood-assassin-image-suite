@@ -3,6 +3,79 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <title>Bloodbound Assassin — Showcase</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .hero { text-align: center; padding: 2.5rem 1rem 1.5rem; }
+      .hero h1 { margin: 0 0 .5rem; font-size: 2rem; letter-spacing: .5px; }
+      .tag { color:#d4af37; }
+      .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+      .card h3 { margin: .25rem 0 .5rem; }
+      .card p { color: var(--muted); margin: 0 0 .75rem; }
+      .cta { display:inline-block; background:#483d8b; color:#fff; padding:.6rem 1rem; border-radius:8px; text-decoration:none; font-weight:600; }
+      .cta:hover { background:#3f377d; }
+      .top-nav { display:flex; justify-content:center; gap:12px; padding: 10px 0 0; }
+      .top-nav a { color:#d4af37; text-decoration:none; border:1px solid #483d8b; padding:8px 12px; border-radius:6px; }
+      .top-nav a:hover { background:#8b0000; border-color:#d4af37; }
+    </style>
+  </head>
+  <body>
+    <header>
+       <h1>Bloodbound Assassin</h1>
+      <p class="tag">Classroom Showcase — dark fantasy visuals, UI, and tooling</p>
+      <nav class="top-nav">
+        <a href="/gallery.html">Gallery</a>
+        <a href="/generator.html">Image Generator</a>
+        <a href="/theme-preview.html">Theme Preview</a>
+        <a href="/experiments/">Experiments</a>
+      </nav>
+    </header>
+
+    <main style="max-width: 1040px; margin: 0 auto; padding: 1rem;">
+      <section class="hero card">
+        <h2 style="margin:0 0 .25rem;">Explore the Project</h2>
+        <p style="margin:0; color:var(--muted)">
+          Browse a curated gallery, try generating new images, and see the typography/color theme that ties it all together.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="card" style="border-left: 4px solid #8b0000;">
+          <h3>Visual Gallery</h3>
+          <p>Portraits, locations, and cinematic scenes from the Bloodbound universe.</p>
+          <a class="cta" href="/gallery.html">Open Gallery</a>
+        </article>
+
+        <article class="card" style="border-left: 4px solid #483d8b;">
+          <h3>Image Generator</h3>
+          <p>Use prompts to generate fresh visuals via OpenRouter (Gemini 2.5 Flash Image).</p>
+          <a class="cta" href="/generator.html">Try the Generator</a>
+        </article>
+
+        <article class="card" style="border-left: 4px solid #d4af37;">
+          <h3>Theme Preview</h3>
+          <p>Typography and color system (Crimson, Twilight Purple, Gold) for a cohesive style.</p>
+          <a class="cta" href="/theme-preview.html">View Theme</a>
+        </article>
+
+        <article class="card" style="border-left: 4px solid #8b0000;">
+          <h3>Experiments</h3>
+          <p>Access all one-off HTML experiments (interactive gallery, tools, and source variants).</p>
+          <a class="cta" href="/experiments/">Browse Experiments</a>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <small>© Bloodbound Assassin — classroom exercise</small>
+    </footer>
+  </body>
+  </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blood Assassin - Image Generator</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>

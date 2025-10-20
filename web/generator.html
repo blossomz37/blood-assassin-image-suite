@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blood Assassin - Image Generator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>NanoBanana Simple - Image Generator</h1>
+      <p>Type or upload a prompt file, generate, preview, and download images.</p>
+      <p><a href="/" style="color:#d4af37; text-decoration:underline;">Back to Showcase</a></p>
+    </header>
+
+    <main>
+      <section class="card" style="border-left: 4px solid #8b0000;">
+        <h2>Explore the Visual Gallery</h2>
+        <p>Browse portraits, locations, and epic scenes from the Bloodbound universe.</p>
+        <p><a href="/gallery.html" style="color:#d4af37; text-decoration:underline;">Open Gallery</a></p>
+      </section>
+
+      <section class="card">
+        <form id="genForm">
+          <div class="row">
+            <label for="apiKey">Temporary OpenRouter API key (not stored)</label>
+            <input type="password" id="apiKey" name="apiKey" placeholder="sk-or-v1-..." autocomplete="off" />
+          </div>
+          <div class="row">
+            <label for="name">Output base name</label>
+            <input type="text" id="name" name="name" placeholder="e.g., custom_scene" />
+          </div>
+
+          <div class="row">
+            <label for="prompt">Prompt</label>
+            <textarea id="prompt" name="prompt" rows="8" placeholder="Describe the image..."></textarea>
+          </div>
+
+          <div class="row">
+            <label for="prompt_file">or Upload .txt prompt</label>
+            <input type="file" id="prompt_file" name="prompt_file" accept=".txt" />
+          </div>
+
+          <div class="actions">
+            <button type="submit" id="generateBtn">Generate</button>
+            <span id="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Results</h2>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Model: google/gemini-2.5-flash-image via OpenRouter</small>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>

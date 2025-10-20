@@ -22,6 +22,13 @@ from generate_images import generate_image, OUTPUT_DIR, PROMPTS_DIR, OPENROUTER_
 
 ROOT = Path(__file__).parent
 WEB_DIR = ROOT / "web"
+EXPERIMENTS_DIRS = {
+    "phase-4-html-gallery": ROOT / "phase-4-html-gallery",
+    "theme-factory": ROOT / "01-theme-factory",
+    "artifacts-builder": ROOT / "02-artifacts-builder",
+    "visual-assets-package": ROOT / "visual-assets-package",
+    "visual-assets-package-alt": ROOT / "04-visual-assets-package",
+}
 
 app = Flask(__name__, static_folder=str(WEB_DIR), static_url_path="")
 CORS(app)
@@ -111,6 +118,21 @@ def serve_generated(filename: str):
 def serve_prompts(filename: str):
     # Optional: expose prompt files for convenience in UI if needed
     directory = str(PROMPTS_DIR.resolve())
+    return send_from_directory(directory, filename, as_attachment=False)
+
+
+@app.route('/experiments-src/<group>/<path:filename>')
+def serve_experiment_source(group: str, filename: str):
+    """
+    Serve static experiment HTML files that live outside the web/ directory.
+    This allows lightweight wrapper pages under web/experiments to embed them via <iframe>.
+
+    Allowed groups are limited to known experiment folders only (see EXPERIMENTS_DIRS).
+    """
+    base_dir = EXPERIMENTS_DIRS.get(group)
+    if not base_dir:
+        return "Unknown experiment group", 404
+    directory = str(base_dir.resolve())
     return send_from_directory(directory, filename, as_attachment=False)
 
 

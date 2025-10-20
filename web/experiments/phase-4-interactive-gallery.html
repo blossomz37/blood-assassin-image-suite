@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive Character Gallery — Experiment</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .frame-wrap { height: 85vh; border: 2px solid #483d8b; border-radius: 10px; overflow: hidden; background:#000; }
+      iframe { width: 100%; height: 100%; border: 0; }
+      .top-nav { display:flex; justify-content:center; gap:12px; padding: 10px 0 10px; }
+      .top-nav a { color:#d4af37; text-decoration:none; border:1px solid #483d8b; padding:8px 12px; border-radius:6px; }
+      .top-nav a:hover { background:#8b0000; border-color:#d4af37; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Interactive Character Gallery</h1>
+      <nav class="top-nav">
+        <a href="/">Home</a>
+        <a href="/experiments/">All Experiments</a>
+      </nav>
+    </header>
+    <main style="max-width: 1200px; margin: 0 auto; padding: 1rem;">
+      <div class="frame-wrap">
+        <iframe src="/experiments-src/phase-4-html-gallery/Blood%20Assassin%20-%20Interactive%20Character%20Gallery.html" title="Phase 4 Interactive Gallery"></iframe>
+      </div>
+    </main>
+  </body>
+</html>
